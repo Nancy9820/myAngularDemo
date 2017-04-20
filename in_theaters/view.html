@@ -1,0 +1,50 @@
+<h1 class="page-header">{{title}}</h1>
+<div>
+    <a class="media-list">
+        <div class="median" ng-repeat="item in movieData">
+            <span class="badge">{{item.rating.average}}</span>
+
+            <div class="media-left">
+                <a href="#">
+                    <img class="media-object"
+                         ng-src="{{item.images.small}}" data-holder-rendered="true" style="width: 80px;height: 100px;">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">{{item.title}}</h4>
+                <!-- 类型 导演 主演 年代 评分 上映日期 首播日期-->
+                <div>导演：<span ng-repeat="temp in item.directors">{{temp.name}}</span></div>
+                <div>主演：<span ng-repeat="temp in item.casts">{{temp.name+($last?'':'/')}}</span></div>
+                <div>类型：<span ng-repeat="temp in item.genres">{{temp+($last?'':'/')}}</span></div>
+                <div>{{item.subtype=='movie'?'上映日期':'首播日期'}}：<span>{{item.year}}</span></div>
+            </div>
+        </div>
+    </a>
+    <p>总共{{totalRecord}}条记录</p>
+    <ul class="pager">
+        <li><a href="#">&lt&lt上一页</a></li>
+        <li><a href="#">下一页&gt&gt</a></li>
+    </ul>
+    <!--<ul class="media-list">-->
+    <!--<li class="median" ng-repeat="item in movieData">-->
+    <!--<span class="badge">{{item.rating.average}}</span>-->
+
+    <!--<div class="media-left">-->
+    <!--<a href="#">-->
+    <!--<img class="media-object"-->
+    <!--ng-src="{{item.images.small}}" data-holder-rendered="true" style="width: 80px;height: 100px;">-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--<div class="media-body">-->
+    <!--<h4 class="media-heading">{{item.title}}</h4>-->
+    <!--&lt;!&ndash; 类型 导演 主演 年代 评分 上映日期 首播日期&ndash;&gt;-->
+    <!--<div>导演：<span ng-repeat="temp in item.directors">{{temp.name}}</span></div>-->
+    <!--<div>主演：<span ng-repeat="temp in item.casts">{{temp.name+($last?'':'/')}}</span></div>-->
+    <!--<div>类型：<span ng-repeat="temp in item.genres">{{temp+($last?'':'/')}}</span></div>-->
+    <!--<div>{{item.subtype=='movie'?'上映日期':'首播日期'}}：<span>{{item.year}}</span></div>-->
+    <!--</div>-->
+
+    <!--</li>-->
+    <!--</ul>-->
+    <!--<span class="badge">42</span>-->
+</div>
